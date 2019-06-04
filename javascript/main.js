@@ -47,12 +47,16 @@ startStopBtn.addEventListener("click", function() {
     }
     if (startStopBtn.innerHTML === "Start") {
         startStopBtn.innerHTML = "Stop";
+        startStopBtn.classList.add("stop");
+        startStopBtn.classList.remove("start");
         lapResetBtn.innerHTML = "Lap";
         lapResetBtn.disabled = false;
         stopwatch();
     }
     else {
         startStopBtn.innerHTML = "Start";
+        startStopBtn.classList.add("start");
+        startStopBtn.classList.remove("stop");
         stop();
     }
 });
@@ -88,7 +92,7 @@ function lap() {
     let dispLapSec = (dispTwoDigits(lapSeconds));
     let dispLapMin = (dispTwoDigits(lapMins));
 
-    newLap.innerHTML = `<span>Lap ${lapNum}</span> <span>${dispLapMin}:${dispLapSec}.${dispLapMilli}<span>`;
+    newLap.innerHTML = `<span>Lap ${lapNum}</span> <span>${dispLapMin}:${dispLapSec}.${dispLapMilli}</span>`;
     dispLap.insertBefore(newLap, dispLap.childNodes[0]);
 }
 
@@ -96,6 +100,7 @@ function reset() {
     seconds = 0;
     mins = 0;
     hours = 0;
+    lapNum = 1;
     initialClick = true;
 
     dispMilli.innerHTML = (dispTwoDigits(0));

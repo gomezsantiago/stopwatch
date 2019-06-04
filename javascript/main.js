@@ -109,20 +109,6 @@ function reset(){
     dispMilli.innerHTML = (dispTwoDigits(0));
     dispSec.innerHTML = (dispTwoDigits(seconds));
     dispMin.innerHTML = (dispTwoDigits(mins));
+    dispLap.innerHTML = '';
 
 }
-
-
-
-
-
-
-
-
-// class StopWatch{
-    
-    
-//     constructor(){
-
-//     }
-// }

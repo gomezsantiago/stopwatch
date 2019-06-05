@@ -22,6 +22,9 @@ let seconds = 0;
 let mins = 0;
 let hours = 0;
 
+// maximum and minimum time
+let maxLapTime = 0;
+let minLapTime = 0;
 
 let intervalID;
 let initialClick = true;
@@ -31,6 +34,7 @@ lapResetBtn.addEventListener("click", function() {
         lapTime = Date.now();
         newLap = document.createElement("LI");
         lapNum++;
+        if(lapNum > 2) compareLapTimes(); 
         lap();
     }
     else {
@@ -43,6 +47,7 @@ lapResetBtn.addEventListener("click", function() {
 startStopBtn.addEventListener("click", function() {
     if (initialClick) {
         currTime = Date.now();
+        lapTime = Date.now();
         initialClick = false;
     }
     if (startStopBtn.innerHTML === "Start") {

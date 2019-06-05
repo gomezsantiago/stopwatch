@@ -18,10 +18,10 @@ color
 
 html{
     box-sizing: border-box;
-    font-size: 14px;
+    font-size: 16px;
 }
 h1{
-    font-size: 3.5rem;
+    font-size: 6rem;
 }
 h3{
     font-size: 1.25rem;
